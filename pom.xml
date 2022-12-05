@@ -98,15 +98,14 @@
               <dataFile>${project.build.directory}/jacoco.exec</dataFile>
               <rules>
                 <rule>
-                  <element>
-                    <distributionManagement>
+                  <element>CLASS</element>
+                     <distributionManagement>
                       <repository>
                         <id>github</id>
                         <name>GitHub Apache Maven Packages</name>
                         <url>https://maven.pkg.github.com/CS1632/supplementary-exercise-4-ci-cd-pipelines-Lux0924</url>
                       </repository>
-                    </distributionManagement>                   
-                  </element>
+                    </distributionManagement>      
                   <limits>
                     <limit>
                       <counter>INSTRUCTION</counter>
