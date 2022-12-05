@@ -99,7 +99,7 @@
               <rules>
                 <rule>
                   <element>CLASS</element>
-                    <distributionManagement>
+                  <distributionManagement>
                     <repository>
                       <id>github</id>
                       <name>GitHub Apache Maven Packages</name>
