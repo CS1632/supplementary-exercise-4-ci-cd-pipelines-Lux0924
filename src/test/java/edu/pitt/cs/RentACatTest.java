@@ -1,3 +1,4 @@
+
 package edu.pitt.cs;
 
 import org.junit.Test;
@@ -26,7 +27,6 @@ public class RentACatTest {
 	Cat c3; // Third cat object
 	@Before
 	public void setUp() throws Exception {
-//		Config.setBuggyRentACat(true);
 		// Turn on automatic bug injection in the Cat class, to emulate a buggy Cat.
 		// Your unit tests should work regardless of these bugs.
 		Cat.bugInjectionOn = true;
@@ -39,16 +39,19 @@ public class RentACatTest {
 		c1 = Mockito.mock(Cat.class);
 		Mockito.when(c1.getId()).thenReturn(1);
 		Mockito.when(c1.getName()).thenReturn("Jennyanydots");
+		Mockito.when(c1.toString()).thenReturn("ID 1. Jennyanydots");
 
 		// 3. Create an unrented Cat with ID 2 and name "Old Deuteronomy", assign to c2
 		c2 = Mockito.mock(Cat.class);
 		Mockito.when(c2.getId()).thenReturn(2);
 		Mockito.when(c2.getName()).thenReturn("Old Deuteronomy");
+		Mockito.when(c2.toString()).thenReturn("ID 2. Old Deuteronomy");
 
 		// 4. Create an unrented Cat with ID 3 and name "Mistoffelees", assign to c3
 		c3 = Mockito.mock(Cat.class);
 		Mockito.when(c3.getId()).thenReturn(3);
 		Mockito.when(c3.getName()).thenReturn("Mistoffelees");
+		Mockito.when(c3.toString()).thenReturn("ID 3. Mistoffelees");
 	}
 
 	@After
@@ -63,7 +66,7 @@ public class RentACatTest {
 
 	/**
 	 * Test case for Cat getCat(int id).
-	 * 
+	 *
 	 * <pre>
 	 * Preconditions: r has no cats.
 	 * Execution steps: Call getCat(2).
@@ -78,7 +81,7 @@ public class RentACatTest {
 
 	/**
 	 * Test case for Cat getCat(int id).
-	 * 
+	 *
 	 * <pre>
 	 * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
 	 * Execution steps: Call getCat(2).
@@ -101,7 +104,7 @@ public class RentACatTest {
 
 	/**
 	 * Test case for boolean catAvailable(int id).
-	 * 
+	 *
 	 * <pre>
 	 * Preconditions: r has no cats.
 	 * Execution steps: Call catAvailable(2).
@@ -116,7 +119,7 @@ public class RentACatTest {
 
 	/**
 	 * Test case for boolean catAvailable(int id).
-	 * 
+	 *
 	 * <pre>
 	 * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
 	 *                c3 is rented.
@@ -141,7 +144,7 @@ public class RentACatTest {
 
 	/**
 	 * Test case for boolean catAvailable(int id).
-	 * 
+	 *
 	 * <pre>
 	 * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
 	 *                c2 is rented.
@@ -166,7 +169,7 @@ public class RentACatTest {
 
 	/**
 	 * Test case for boolean catExists(int id).
-	 * 
+	 *
 	 * <pre>
 	 * Preconditions: r has no cats.
 	 * Execution steps: Call catExists(2).
@@ -181,7 +184,7 @@ public class RentACatTest {
 
 	/**
 	 * Test case for boolean catExists(int id).
-	 * 
+	 *
 	 * <pre>
 	 * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
 	 * Execution steps: Call catExists(2).
@@ -194,12 +197,13 @@ public class RentACatTest {
 		r.addCat(c1);
 		r.addCat(c2);
 		r.addCat(c3);
+
 		assertTrue(r.catExists(2));
 	}
 
 	/**
 	 * Test case for String listCats().
-	 * 
+	 *
 	 * <pre>
 	 * Preconditions: r has no cats.
 	 * Execution steps: Call listCats().
@@ -207,23 +211,14 @@ public class RentACatTest {
 	 * </pre>
 	 */
 
-	 /*
-	  
-
-
-	AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
-
-
-	  */
 	@Test
 	public void testListCatsNumCats0() {
-		// TODO
 		assertEquals("",r.listCats());
 	}
 
 	/**
 	 * Test case for String listCats().
-	 * 
+	 *
 	 * <pre>
 	 * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
 	 * Execution steps: Call listCats().
@@ -234,17 +229,16 @@ public class RentACatTest {
 
 	@Test
 	public void testListCatsNumCats3() {
-		// TODO
 		r.addCat(c1);
 		r.addCat(c2);
 		r.addCat(c3);
-//		CatS2= Mockito.mock(RentACat.class);
-		assertEquals("ID 1. Jennyanydots\nID 2. Old Deuteronomy\nID 3. Mistoffelees\n",r.listCats());//.thenReturn("ID 1. Jennyanydots\nID 2. Old Deuteronomy\nID 3. Mistoffelees\n");
+
+		assertEquals("ID 1. Jennyanydots\nID 2. Old Deuteronomy\nID 3. Mistoffelees\n",r.listCats());
 	}
 
 	/**
 	 * Test case for boolean rentCat(int id).
-	 * 
+	 *
 	 * <pre>
 	 * Preconditions: r has no cats.
 	 * Execution steps: Call rentCat(2).
@@ -255,12 +249,11 @@ public class RentACatTest {
 	@Test
 	public void testRentCatFailureNumCats0() {
 		assertFalse(r.rentCat(2));
-		// TODO
 	}
 
 	/**
 	 * Test case for boolean rentCat(int id).
-	 * 
+	 *
 	 * <pre>
 	 * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
 	 *                c2 is rented.
@@ -268,7 +261,7 @@ public class RentACatTest {
 	 * Postconditions: Return value is false.
 	 *                 c1.rentCat(), c2.rentCat(), c3.rentCat() are never called.
 	 * </pre>
-	 * 
+	 *
 	 * Hint: See sample_code/mockito_example/NoogieTest.java in the course
 	 * repository for an example of behavior verification. Refer to the
 	 * testBadgerPlayCalled method.
@@ -280,10 +273,9 @@ public class RentACatTest {
 		r.addCat(c1);
 		r.addCat(c2);
 		r.addCat(c3);
+
 		Mockito.when(c2.getRented()).thenReturn(true);
-	//	Mockito.when(r.rentCat(2)).thenReturn(true);
-	//	RentACat CatS1= Mockito.mock(RentACat.class);
-//		CatS1.rentCat(2);
+
 		assertFalse(r.rentCat(2));
 		Mockito.verify(c1,Mockito.times(0)).rentCat();
 		Mockito.verify(c2,Mockito.times(0)).rentCat();
@@ -292,7 +284,7 @@ public class RentACatTest {
 
 	/**
 	 * Test case for boolean returnCat(int id).
-	 * 
+	 *
 	 * <pre>
 	 * Preconditions: r has no cats.
 	 * Execution steps: Call returnCat(2).
@@ -303,12 +295,11 @@ public class RentACatTest {
 	@Test
 	public void testReturnCatFailureNumCats0() {
 		assertFalse(r.returnCat(2));
-		// TODO
 	}
 
 	/**
 	 * Test case for boolean returnCat(int id).
-	 * 
+	 *
 	 * <pre>
 	 * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
 	 *                c2 is rented.
@@ -317,7 +308,7 @@ public class RentACatTest {
 	 *                 c2.returnCat() is called exactly once.
 	 *                 c1.returnCat() and c3.returnCat are never called.
 	 * </pre>
-	 * 
+	 *
 	 * Hint: See sample_code/mockito_example/NoogieTest.java in the course
 	 * repository for an example of behavior verification. Refer to the
 	 * testBadgerPlayCalled method.
@@ -328,13 +319,12 @@ public class RentACatTest {
 		r.addCat(c1);
 		r.addCat(c2);
 		r.addCat(c3);
+
 		Mockito.when(c2.getRented()).thenReturn(true);
-	//	RentACat CatS2= Mockito.mock(RentACat.class);
+
 		assertTrue(r.returnCat(2));
-	//	Mockito.when(c2.getRented()).thenReturn("")
 		Mockito.verify(c2).returnCat();
 		Mockito.verify(c1,Mockito.times(0)).returnCat();
 		Mockito.verify(c3,Mockito.times(0)).returnCat();
-		// TODO
 	}
 }

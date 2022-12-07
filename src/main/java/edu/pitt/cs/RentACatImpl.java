@@ -12,7 +12,7 @@ public class RentACatImpl implements RentACat {
 	 * passed-in cat id. If the cat with the id exists in the list of cats and has
 	 * been rented out, then this method should return true after calling
 	 * .returnCat() on that cat. Otherwise, the method should return false.
-	 * 
+	 *
 	 * @param id the ID of the cat to rent
 	 * @return true if cat exists and was rented out, false otherwise
 	 */
@@ -35,7 +35,7 @@ public class RentACatImpl implements RentACat {
 	 * passed-in cat id. If the cat with the id exists in the list of cats and has
 	 * *not* been rented out, then this method should return true after calling
 	 * .rentCat() on that cat. Otherwise, the method should return false.
-	 * 
+	 *
 	 * @param id the ID of the cat to rent
 	 * @return true if cat exists and was not rented out, false otherwise
 	 */
@@ -59,7 +59,7 @@ public class RentACatImpl implements RentACat {
 	 * are available to be rented. These cats should be separated by "\n" characters
 	 * (line feeds). Example: ID 1. Jennyanydots ID 2. Old Deuteronomy ID 3.
 	 * Mistoffelees
-	 * 
+	 *
 	 * @return "\n"-delimited list of rentable cats
 	 */
 
@@ -69,7 +69,6 @@ public class RentACatImpl implements RentACat {
 		for (Cat c : cats) {
 			str.append("ID "+(++count)+". "+c.getName() + "\n");
 		}
-		System.out.println(str.toString());
 		return str.toString();
 	}
 
@@ -77,7 +76,7 @@ public class RentACatImpl implements RentACat {
 	 * Given an id, return true if the cat exists in the list of cats or false if
 	 * no cat with that id number exists in the list. If list is null or contains 0
 	 * elements, should always return false.
-	 * 
+	 *
 	 * @param id ID of cat to search for
 	 * @return true if cat exists in list, false otherwise
 	 */
@@ -95,7 +94,7 @@ public class RentACatImpl implements RentACat {
 	 * Given an id, return true if the cat exists in the list of cats and is
 	 * available for rent; otherwise return false. If list is null or contains 0
 	 * elements, should always return false.
-	 * 
+	 *
 	 * @param id ID of cat to search for
 	 * @return true if cat available for rent, false otherwise
 	 */
@@ -124,7 +123,7 @@ public class RentACatImpl implements RentACat {
 	/**
 	 * Given an id, return a reference to the specified cat if a cat with that ID
 	 * exists. Return null if no cat of that ID exists in the list.
-	 * 
+	 *
 	 * @param id ID of cat to search for
 	 * @return Cat searched for if exists, null otherwise
 	 */
@@ -154,7 +153,7 @@ public class RentACatImpl implements RentACat {
 
 	/**
 	 * Add a cat to the list of cats.
-	 * 
+	 *
 	 * @param c the Cat to add
 	 */
 
@@ -164,7 +163,7 @@ public class RentACatImpl implements RentACat {
 
 	/**
 	 * Main method
-	 * 
+	 *
 	 * @param args - IGNORED, kept for compatibility
 	 */
 	public static void main(String[] args) {

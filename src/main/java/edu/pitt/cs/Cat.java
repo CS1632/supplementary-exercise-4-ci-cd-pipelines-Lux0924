@@ -1,3 +1,4 @@
+
 package edu.pitt.cs;
 
 public class Cat {
@@ -30,7 +31,7 @@ public class Cat {
 	 * Constructor - creates a new Cat object Note there are no checks that this ID
 	 * is not taken by another cat! This is probably something that we would fix in
 	 * a production system.
-	 * 
+	 *
 	 * @param id - the id number of this cat
 	 * @param name - the name of this Cat
 	 */
@@ -68,7 +69,7 @@ public class Cat {
 
 	/**
 	 * Accessor for name variable. Returns the name of this cat.
-	 * 
+	 *
 	 * @return String name of cat
 	 */
 
@@ -81,7 +82,7 @@ public class Cat {
 
 	/**
 	 * Accessor for id variable. Returns the ID of this cat.
-	 * 
+	 *
 	 * @return int ID of this cat
 	 */
 
@@ -94,7 +95,7 @@ public class Cat {
 
 	/**
 	 * Accessor for rented variable. Returns if cat is rented.
-	 * 
+	 *
 	 * @return boolean - true if rented, false otherwise
 	 */
 
@@ -108,7 +109,7 @@ public class Cat {
 	/**
 	 * Returns string version of this cat, in form: "ID *id_num*. *name*" Example
 	 * for cat of ID 1, name Jennyanydots: "ID 1. Jennyanydots"
-	 * 
+	 *
 	 * @return String string version of cat
 	 */
 
